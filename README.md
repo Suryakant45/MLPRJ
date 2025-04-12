@@ -25,6 +25,7 @@ python setup.py install
 pip install requirements.txt
 
 
+python -m src.DiamondPricePrediction.pipelines.training_pipeline
 
 
 

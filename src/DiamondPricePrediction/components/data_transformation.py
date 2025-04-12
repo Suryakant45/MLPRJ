@@ -5,15 +5,15 @@ import pandas as pd
 import numpy as np
 
 from dataclasses import dataclass
-from src.DimondPricePrediction.exception import customexception
-from src.DimondPricePrediction.logger import logging
+from src.DiamondPricePrediction.exception import customexception
+from src.DiamondPricePrediction.logger import logging
 
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OrdinalEncoder,StandardScaler
 
-from src.DimondPricePrediction.utils.utils import save_object
+from src.DiamondPricePrediction.utils.utils import save_object
 
 @dataclass
 class DataTransformationConfig:

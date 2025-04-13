@@ -46,9 +46,17 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
 
 def load_object(file_path):
     try:
+        print(f"Attempting to load object from {file_path}")
+        if not os.path.exists(file_path):
+            print(f"Error: File {file_path} does not exist")
+            raise FileNotFoundError(f"File {file_path} not found")
+
         with open(file_path,'rb') as file_obj:
-            return pickle.load(file_obj)
+            obj = pickle.load(file_obj)
+            print(f"Successfully loaded object from {file_path}")
+            return obj
     except Exception as e:
+        print(f"Exception occurred in load_object function: {str(e)}")
         logging.info('Exception Occured in load_object function utils')
         raise customexception(e,sys)
 
